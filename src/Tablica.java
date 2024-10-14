@@ -11,7 +11,6 @@ public class Tablica {
         this.tablica = new int[n];
     }
 
-    // Metoda do wypełniania tablicy wartościami losowymi z zakresu [a, b]
     public void wypelnij(int a, int b) {
         Random rand = new Random();
         for (int i = 0; i < n; i++) {
@@ -19,23 +18,19 @@ public class Tablica {
         }
     }
 
-    // Metoda zwracająca maksymalną wartość w tablicy
-    public int maksimum() {
+    public int max() {
         return Arrays.stream(tablica).max().getAsInt();
     }
 
-    // Metoda zwracająca minimalną wartość w tablicy
-    public int minimum() {
+    public int min() {
         return Arrays.stream(tablica).min().getAsInt();
     }
 
-    // Metoda zwracająca drugą maksymalną wartość w tablicy
-    public int maksimum2() {
-        int max = maksimum();
+    public int max2() {
+        int max = max();
         return Arrays.stream(tablica).filter(x -> x != max).max().orElse(max);
     }
 
-    // Metoda zwracająca indeks podanej wartości a lub -1, jeśli nie istnieje
     public int znajdz(int a) {
         for (int i = 0; i < n; i++) {
             if (tablica[i] == a) {
@@ -45,7 +40,6 @@ public class Tablica {
         return -1;
     }
 
-    // Metoda pomocnicza do zwrócenia tablicy jako string
     public String toString() {
         return Arrays.toString(tablica);
     }
